@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>firstDjango</title>
+</head>
+<body>
+    {% include 'navbar.html' %} <!-- This is saying that we want to include the content from the navbar.html file here in this template.  This is called template inheritance.
+    This allows us to reuse a section of a template multiple templates/pages for things that we plan to reuse such as a navbar -->
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+    {% block content %}
+
+    <!--This will be the main template structure used for all pages.  We can have the content from other templates appear 
+    here while keeping the same styling across all pages-->
+
+    {% endblock %}
+
+</body>
+</html>
